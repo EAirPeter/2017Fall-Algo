@@ -1,0 +1,11 @@
+maximum value = 2001, selecting 1 tasks: 1
+
+maximum value = 635, selecting 3 tasks: 4 2 0
+
+maximum value = 101, selecting 2 tasks: 2 0
+
+maximum value = 50, selecting 5 tasks: 4 2 3 0 1
+
+maximum value = 0, selecting 0 tasks:
+
+maximum value = 10, selecting 1 tasks: 1
