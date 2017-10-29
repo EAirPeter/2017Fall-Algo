@@ -12,7 +12,7 @@ vector<pair<size_t, size_t>> bla;   // the coordinate of black grids
 vector<pair<size_t, size_t>> whi;   // the coordinate of white grids
 vector<vector<size_t>> lbl;         // the label of a grid, mapping to the original input
 vector<vector<size_t>> adj;         // list of white grids which are adjacent to a black grid
-vector<unsigned char> vis;          // whether a white grid has been visited during the current matching process
+vector<unsigned char> vis;          // whether a white grid has been visited
 vector<size_t> mat;                 // which black grid is matched with a white grid
 
 bool match(size_t lb) {
@@ -119,16 +119,11 @@ void print() {
 int main() {
     ios_base::sync_with_stdio(false);
     // capable of accepting multiple sets of input
-    bool first = true;
     while (cin >> row >> col) {
         grd.resize(row);
         for (size_t i = 0; i < row; ++i)
             cin >> grd[i];
         auto ans = tiling();
-        if (first)
-            first = false;
-        else
-            cout << endl;
         if (ans) {
             cout << "yes" << endl;
             print();
@@ -136,6 +131,7 @@ int main() {
         else {
             cout << "no" << endl;
         }
+        cout << endl;
     }
     return 0;
 }

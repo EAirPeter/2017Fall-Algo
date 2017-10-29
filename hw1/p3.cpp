@@ -37,7 +37,7 @@ void ism() {
     // considering if there exists a task with negative value
     states[0].sel = tasks[0].val > 0.0;
     states[0].val = tasks[0].val > 0.0 ? tasks[0].val : 0.0;
-    states[0].idx = (size_t) ~0;
+    states[0].idx = ~size_t {};
     for (size_t i = 1; i < tasks.size(); ++i) {
         auto it = upper_bound(
             tasks.begin(), tasks.begin() + (ptrdiff_t) i, tasks[i].sta,
@@ -47,7 +47,7 @@ void ism() {
         );
         // it == tasks.begin() means the current task conflicts with all previous tasks
         // the last task that does not conflict with the current one
-        auto prev = it == tasks.begin() ? (size_t) ~0 : (size_t) (it - tasks.begin()) - 1;
+        auto prev = it == tasks.begin() ? ~size_t {} : (size_t) (it - tasks.begin()) - 1;
         // if select task i 
         auto vsel = it == tasks.begin() ? tasks[i].val : states[prev].val + tasks[i].val;
         // if not
@@ -64,14 +64,17 @@ void ism() {
         }
     }
     answer.clear();
-    for (auto i = states.back().sel ? ntask - 1 : states.back().idx; i != (size_t) ~0; i = states[i].idx)
+    for (auto i = states.back().sel ? ntask - 1 : states.back().idx;
+        i != ~size_t {}; i = states[i].idx)
+    {
         answer.push_back(tasks[i].id);
+    }
+    sort(answer.begin(), answer.end());
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     // capable of accepting multiple sets of input
-    bool first = true;
     while (cin >> ntask) {
         tasks.resize(ntask);
         size_t cnt = 0;
@@ -80,14 +83,11 @@ int main() {
             tsk.id = cnt++;
         }
         ism();
-        if (first)
-            first = false;
-        else
-            cout << endl;
-        cout << "maximum value = " << states.back().val << ", selecting " << answer.size() << " tasks:";
+        cout << "maximum value = " << states.back().val;
+        cout << ", selecting " << answer.size() << " tasks:";
         for (auto id : answer)
             cout << ' ' << id;
-        cout << endl;
+        cout << endl << endl;
     }
     return 0;
 }
