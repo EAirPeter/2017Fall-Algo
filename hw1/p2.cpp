@@ -30,12 +30,12 @@ void ism() {
             finish = tsk.fin;
             answer.push_back(tsk.id);
         }
+    sort(answer.begin(), answer.end());
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     // capable of accepting multiple sets of input
-    bool first = true;
     while (cin >> ntask) {
         tasks.resize(ntask);
         size_t cnt = 0;
@@ -44,14 +44,10 @@ int main() {
             tsk.id = cnt++;
         }
         ism();
-        if (first)
-            first = false;
-        else
-            cout << endl;
         cout << "maximum tasks = " << answer.size() << ", selecting:";
         for (auto id : answer)
             cout << ' ' << id;
-        cout << endl;
+        cout << endl << endl;
     }
     return 0;
 }
