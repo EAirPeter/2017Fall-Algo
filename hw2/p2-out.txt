@@ -1,0 +1,12 @@
+select 2 time points: 10 21
+
+select 1 time points: 10
+
+select 1 time points: 8
+
+select 1 time points: 10
+
+select 2 time points: 3 9
+
+select 2 time points: 10 30
+
