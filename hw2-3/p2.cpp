@@ -10,7 +10,6 @@ struct process {
     uint32_t fin; // finish time
 };
 
-
 vector<uint32_t> an_efficient_algorithm(vector<process> proces) {
     // greedy approach
     sort(

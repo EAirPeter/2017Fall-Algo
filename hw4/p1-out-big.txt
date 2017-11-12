@@ -1,0 +1,4 @@
+minimum scalar multiplications: 371228993909382
+
+minimum scalar multiplications: 2909365722432806
+

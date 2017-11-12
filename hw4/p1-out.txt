@@ -1,0 +1,6 @@
+minimum scalar multiplications: 2
+
+minimum scalar multiplications: 10880
+
+minimum scalar multiplications: 1150
+
