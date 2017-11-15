@@ -1,0 +1,6 @@
+minimum penalties: 2
+
+minimum penalties: 4
+
+minimum penalties: 2
+

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <utility>
 #include <vector>
@@ -32,14 +33,22 @@ uint64_t the_algorithm(vector<matrix> mats) {
 
 int main() {
     ios_base::sync_with_stdio(false);
+    // timing
+    using namespace chrono;
+    high_resolution_clock::duration tot {};
     // capable of accepting multiple sets of input
     size_t nmat;
     while (cin >> nmat) {
         vector<matrix> mats(nmat);
         for (auto &mat : mats)
             cin >> mat.row >> mat.col;
-        auto answer = the_algorithm(move(mats));
-        cout << "minimum scalar multiplications: " << answer << endl << endl;
+        auto sta = high_resolution_clock::now();
+        auto ans = the_algorithm(move(mats));
+        auto fin = high_resolution_clock::now();
+        cout << "minimum scalar multiplications: " << ans << endl << endl;
+        tot += fin - sta;
     }
+    cerr << "total time: ";
+    cerr << duration_cast<microseconds>(tot).count() << " us" << endl;
     return 0;
 }
