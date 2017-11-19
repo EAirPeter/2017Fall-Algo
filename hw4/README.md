@@ -19,7 +19,7 @@ hw4 - Sample Input/Output
 * 输入中每两个相邻的矩阵保证前一个的列数等于后一个的行数。
 
 ### 运行时间参考 - p1.cpp
-* `[p1-in-big.txt > p1-out-big.txt] total time: 31256 us`
+* `[p1-in-big.txt > p1-out-big.txt] real    0m0.051s`
 
 ## p2 - Sequence Alignment
 
@@ -48,9 +48,13 @@ hw4 - Sample Input/Output
 
 
 ### 运行时间参考（动态规划） - p2-dp.cpp
-* `[p2-in-big.txt > p1-out-big.txt] total time: 19996 us`
-* `[p2-in-huge.txt > p1-out-huge.txt] total time: 1910083 us`
+* `[p2-in-big.txt > p1-out-big.txt] real    0m0.042s`
+* `[p2-in-huge.txt > p1-out-huge.txt] real    0m2.043s`
 
 ### 运行时间参考（最短路） - p2-sp.cpp
-* `[p2-in-big.txt > p1-out-big.txt] total time: 3815444 us`
+* `[p2-in-big.txt > p1-out-big.txt] real    0m4.157s`
 * 不使用`p2-in-huge.txt`。
+
+## 备注
+* 以上所有程序均使用GCC 7.2.1编译，命令行为`g++ -o (exe) (src) -O2 -std=c++17 -Wall -Wconversion -Wextra -Wformat -Wsign-conversion -pedantic`。
+* 运行时间使用UNIX time命令测量，命令行为`time ./(exe) < (input) > (output)`。

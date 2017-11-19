@@ -76,9 +76,6 @@ uint32_t shortest_path_algorithm(
 
 int main() {
     ios_base::sync_with_stdio(false);
-    // timing
-    using namespace chrono;
-    high_resolution_clock::duration tot {};
     // capable of accepting multiple sets of input
     size_t nchset;
     while (cin >> nchset) {
@@ -98,14 +95,8 @@ int main() {
         vector<uint32_t> s2(ns2);
         for (uint32_t i = 0; i < ns2; ++i)
             cin >> s2[i];
-        shortest_path_algorithm(delta, alpha, s1, s2);
-        auto sta = high_resolution_clock::now();
         auto ans = shortest_path_algorithm(delta, alpha, s1, s2);
-        auto fin = high_resolution_clock::now();
         cout << "minimum penalties: " << ans << endl << endl;
-        tot += fin - sta;
     }
-    cerr << "total time: ";
-    cerr << duration_cast<microseconds>(tot).count() << " us" << endl;
     return 0;
 }
