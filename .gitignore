@@ -1,3 +1,7 @@
+# Anti-Cheat
+*/p*.cpp
+!*data.cpp
+
 # Testing
 test/
 
