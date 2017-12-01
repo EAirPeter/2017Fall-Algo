@@ -13,7 +13,7 @@ constexpr uint32_t MaxT = 30;
 int main() {
     ios_base::sync_with_stdio(false);
     mt19937 rng((uint32_t) chrono::system_clock::now().time_since_epoch().count());
-    ofstream fo("in.txt");
+    ofstream fo("in-big.txt");
     for (uint32_t i = 0; i < 40; ++i) {
         auto n = MaxN - 20 + rng() % 21;
         auto m = MaxM - 4 + rng() % 5;
