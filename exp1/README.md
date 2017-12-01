@@ -1,5 +1,5 @@
-hw4 - Sample Input/Output
-=========================
+exp1 - Sample Input/Output
+==========================
 
 ## p1/p2 - Student-Professor Problem
 
@@ -18,12 +18,16 @@ hw4 - Sample Input/Output
 * `t <= 30`
 * 输入所给的教授、学生、时间点的编号均从1开始（和题目描述相同）。
 * 所有教授在时间点`1 ~ t`都有空闲（即无视原题目描述中的Tj）。
+* 两种情况的输入文件共用。
 
-### 运行时间参考 - 不考虑一个学生只能见一个教授一次（原题要求a、b、c）
+### 运行时间参考 - 不考虑一个学生最多只能见同一个教授一次（原题要求a、b、c）
 ##### Bipartite Graph Matching / Hungarian
 `[in-big.txt > p1-out-big.txt] real    0m0.203s`  
 ##### Maximum Flow / ISAP
-`[in-big.txt > p1-out-big.txt] real    0m0.178s`  
+`[in-big.txt > p1-out-big.txt] real    0m0.189s`  
+
+### 运行时间参考 - 一个学生最多只能见同一个教授一次（原题要求a、b、c、d）
+`[in-big.txt > p2-out-big.txt] real    0m0.218s`  
 
 ## 备注
 * 以上所有程序均使用GCC 7.2.1编译，命令行为`g++ -o (exe) (src) -O2 -std=c++17 -Wall -Wconversion -Wextra -Wformat -Wsign-conversion -pedantic`。
