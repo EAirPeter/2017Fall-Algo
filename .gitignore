@@ -1,6 +1,6 @@
 # Anti-Cheat
-*/p*.cpp
-!*data.cpp
+*.cpp
+!*data*.cpp
 
 # Testing
 test/
